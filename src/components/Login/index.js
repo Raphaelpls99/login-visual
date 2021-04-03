@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { FiLogIn } from 'react-icons/fi'
 
 // CSS
@@ -12,8 +12,11 @@ export default function Logon() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const history = useHistory()
+
     async function handleLogin(e) {
         e.preventDefault()
+        history.push('/home')
     }
 
     return (
